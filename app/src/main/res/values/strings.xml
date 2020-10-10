@@ -3,4 +3,7 @@
     <string name="edittext_uri">Edit Text URI</string>
     <string name="open_website">Open Website</string>
     <string name="edittext_loc">Edit Text Location</string>
+    <string name="yogyakarta">Yogyakarta</string>
+    <string name="open_location">Open Location</string>
+    <string name="share_text">Share Text</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.prakpapb1.implicitintent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,10 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import static android.util.Log.*;
+
 public class MainActivity extends AppCompatActivity {
     private EditText mWebsiteEditText;
     private EditText mLocationEditText;
     private EditText mShareEditText;
+    private String tag;
+    private Object msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +34,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent (Intent.ACTION_VIEW, webpage);
         if (intent.resolveActivity(getPackageManager())!=null) {
             startActivity(intent);
-        } else {
-            Log.d(tag: "ImplicitIntents", msg: "Can't handle this action!");
+        }else {
+            Log.d( tag: "ImplicitIntents", msg: "Can't handle this action!" );
         }
+    }
+
+    public void openLocation(View view) {
+        String location=mLocationEditText.getText().toString();
+        Uri addressUri=Uri.parse("geo:0,0?q"+location);
+        Intent intent= new Intent(Intent.ACTION_VIEW, addressUri);
+        if (intent.resolveActivity(getPackageManager())!=null) {
+            startActivity(intent);
+        }else {
+            Log.d( tag: "ImplicitIntents", msg: "Can't handle this action!" );
+        }
+    }
+
+    public void shareText(View view) {
+        String share=mShareEditText.getText().toString();
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setChooserTitle("Share text with:")
+                .setText(share).setType("text/plain")
+                .startChooser();
     }
 }

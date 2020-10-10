@@ -12,7 +12,7 @@
         android:id="@+id/website_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/edittext_uri" />
+        android:text="http://developer.android.com" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,11 +25,25 @@
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/edittext_loc"/>
+        android:text="@string/yogyakarta"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:onClick="openLocation"
+        android:text="@string/open_location"/>
 
+    <EditText
+        android:id="@id/share_edittext"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is text to share ..."/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="shareText"
+        android:text="@string/share_text"/>
 
 </LinearLayout>
