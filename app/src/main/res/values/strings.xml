@@ -6,4 +6,5 @@
     <string name="yogyakarta">Yogyakarta</string>
     <string name="open_location">Open Location</string>
     <string name="share_text">Share Text</string>
+    <string name="this_is_text_to_share">This is text to share ...</string>
 </resources>

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager())!=null) {
             startActivity(intent);
         }else {
-            Log.d( tag: "ImplicitIntents", msg: "Can't handle this action!" );
+            Log.d( "ImplicitIntents", "Can't handle this action!" );
         }
     }
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager())!=null) {
             startActivity(intent);
         }else {
-            Log.d( tag: "ImplicitIntents", msg: "Can't handle this action!" );
+            Log.d("ImplicitIntents","Can't handle this action!" );
         }
     }
 
